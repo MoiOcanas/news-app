@@ -3,7 +3,6 @@ export const createNotice = (notice) => {
         const firestore = getFirestore();
         const profile = getState().firebase.profile;
         const authorId = getState().firebase.auth.uid;
-        console.log(authorId)
         firestore.collection('notices').add({
             ...notice,
             authorFirstName: profile.firstName,
@@ -15,6 +14,19 @@ export const createNotice = (notice) => {
             dispatch({ type: 'CREATE_NOTICE', notice })
         }).catch((err) => {
             dispatch({ type: 'CREATE_NOTICE_ERROR', err })
+        })
+    }
+};
+
+export const deleteNotice = (noticeId) => {
+    console.log('dispatch', noticeId);
+    return (dispatch, getState, { getFirestore }) => {
+        const firestore = getFirestore();
+        firestore.collection('notices').doc(noticeId).delete()
+        .then(() => {
+            dispatch({ type: 'DELETE_NOTICE' });
+        }).catch((err) => {
+            dispatch({ type: 'DELETE_NOTICE_ERROR' });
         })
     }
 };

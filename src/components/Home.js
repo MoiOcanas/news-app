@@ -9,6 +9,7 @@ import NoticeList from './notices/NoticeList';
 import AdtionalInformation from './layout/AdtionalInformation';
 
 class Home extends Component {
+
     render() {
         const { notices, auth, notifications } = this.props;
         if(!auth.uid) return <Redirect to="/signin" />

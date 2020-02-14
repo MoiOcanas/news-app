@@ -3,7 +3,6 @@ import moment from 'moment';
 
 const AdtionalInformation = (props) => {
     const { notifications } = props;
-    console.log(notifications);
     return (
         <div>
             <h4>Notificacions</h4>

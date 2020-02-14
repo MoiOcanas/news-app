@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Components
-import NoticeItem from './NoticeItem';
+import NoticeSummary from './NoticeSummary';
 
 const NoticeList = ({ notices }) => {
     return (
@@ -10,7 +10,7 @@ const NoticeList = ({ notices }) => {
             {
                 notices && notices.map(notice => {
                     return (
-                        <NoticeItem key={notice.id} notice={notice} />
+                        <NoticeSummary key={notice.id} notice={notice} />
                     );
                 })
             }

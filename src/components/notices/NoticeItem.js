@@ -14,7 +14,7 @@ const NoticeItem = ({ notice }) => {
                 </div>
                 <hr />
                 <Link to={`/notice/${notice.id}`}>
-                    <span className="purple-text" href="#">Notice details</span>
+                    <button className="btn purple darken-1">Notice Details</button>
                 </Link>
 
             </div>
