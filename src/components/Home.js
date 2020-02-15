@@ -13,7 +13,7 @@ class Home extends Component {
     render() {
         const { notices, auth, notifications } = this.props;
         if(!auth.uid) return <Redirect to="/signin" />
-        
+
         return (
             <div>
                 <div className="row">

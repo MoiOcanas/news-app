@@ -5,6 +5,7 @@ import { compose } from 'redux';
 import { deleteNotice } from '../../store/actions/noticesActions';
 import { Link } from 'react-router-dom';
 
+
 const NoticeDetails = (props) => {
     const { notice, dispatchDeleteNotice } = props;
     console.log(props);
@@ -35,9 +36,11 @@ const mapStateToProps = (state, ownProps) => {
     const id = ownProps.match.params.id;
     const notices = state.firestore.data.notices;
     const notice = notices ? notices[id] : null;
+    const auth = state.firebase.auth;
     return {
-        id: id,
-        notice: notice
+        id,
+        notice,
+        auth
     }
 }
 

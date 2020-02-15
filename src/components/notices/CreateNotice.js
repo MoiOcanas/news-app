@@ -7,7 +7,9 @@ class CreateNotice extends Component {
     state = {
         title: '',
         content: '',
-        tags: ''
+        tags: '',
+        image: null,
+        photoURL: ''
     }
 
     handleChange = (e) => {

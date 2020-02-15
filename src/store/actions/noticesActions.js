@@ -10,7 +10,8 @@ export const createNotice = (notice) => {
             authorId,
             createdAt: new Date()
 
-        }).then(() => {
+        })
+        .then(() => {
             dispatch({ type: 'CREATE_NOTICE', notice })
         }).catch((err) => {
             dispatch({ type: 'CREATE_NOTICE_ERROR', err })

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { storage } from '../../config/fbConfig';
 import { signUp } from '../../store/actions/authActions';
 
 class SignUp extends Component {
@@ -9,6 +10,8 @@ class SignUp extends Component {
         lastName: '',
         email: '',
         password: '',
+        image: null,
+        photoURL: '',
     }
 
     handleChange = (e) => {
@@ -17,9 +20,24 @@ class SignUp extends Component {
         });
     }
 
+    handleChangeImage = (e) => {
+        if (e.target.files[0]) {
+            const image = e.target.files[0];
+            this.setState({ image });
+        }
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.signUp(this.state);
+        const { image } = this.state;
+        const uploadTask = storage.ref(`images/${image.name}`).put(image)
+        uploadTask.on('state_changed', (snapshot) => {
+            storage.ref('images').child(image.name).getDownloadURL().then(photo => {
+                console.log(photo)
+                this.setState({ photoURL: photo })
+                this.props.signUp(this.state)
+            })
+        })
     }
 
     render() {
@@ -46,6 +64,12 @@ class SignUp extends Component {
                         <div className="input-field col s12">
                             <input id="password" type="password" onChange={this.handleChange} />
                             <label htmlFor="password">Password</label>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="input-field">
+                            <label htmlFor="image">Profile Photo</label>
+                            <input type="file" id="image" onChange={this.handleChangeImage} />
                         </div>
                     </div>
                     <div className="row">
