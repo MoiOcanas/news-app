@@ -43,7 +43,7 @@ class SignIn extends Component {
                                     <label htmlFor="password">Password</label>
                                 </div>
                             </div>
-                            <button className="btn purple darken-1" type="submit" name="action">Login</button>
+                            <button className="btn purple darken-1 z-depth-0" type="submit" name="action">Login</button>
                             <div className="red-text center">
                                 {authError ? <p>{authError}</p> : null}
                             </div>

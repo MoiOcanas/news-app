@@ -78,7 +78,7 @@ class SignUp extends Component {
                             <label htmlFor="email">Email</label>
                         </div>
                     </div>
-                    <button className="btn purple darken-1" type="submit" name="action">Submit
+                    <button className="btn purple darken-1 z-depth-0" type="submit" name="action">Submit
                         <i className="material-icons right">send</i>
                     </button>
                     <div className="red-text center">

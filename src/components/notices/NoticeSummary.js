@@ -5,7 +5,7 @@ import moment from 'moment'
 const NoticeSummary = ({ notice }) => {
     return (
         <div className="card-new" key={notice.id}>
-            <h4>{notice.title}</h4>
+            <h4 className="purple-text">{notice.title}</h4>
             <p>{notice.content}</p>
             <p><strong>By:</strong> <span className="purple-text">{notice.authorFirstName} {notice.authorLastName}</span></p>
             <p><strong>Tags:</strong> {notice.tags}</p>

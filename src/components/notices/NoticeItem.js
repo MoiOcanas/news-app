@@ -6,7 +6,7 @@ const NoticeItem = ({ notice }) => {
         <div>
             <div className="card-new">
                 <div className="card-content">
-                    <h4>{notice.title}</h4>
+                    <h4 className="purple-text">{notice.title}</h4>
 
                     <p>{notice.content}</p>
                     <br />

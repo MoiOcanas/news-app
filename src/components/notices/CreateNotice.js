@@ -52,7 +52,7 @@ class CreateNotice extends Component {
                             <label htmlFor="tags">Tags</label>
                         </div>
                     </div>
-                    <button className="btn purple darken-1" type="submit" name="action">Submit
+                    <button className="btn purple darken-1 z-depth-0" type="submit" name="action">Submit
                         <i className="material-icons right">send</i>
                     </button>
                 </form>

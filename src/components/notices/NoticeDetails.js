@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { deleteNotice } from '../../store/actions/noticesActions';
-import { Link } from 'react-router-dom';
 
 
 //Components
@@ -16,17 +15,14 @@ const NoticeDetails = (props) => {
         return (
             <div>
                 <div className="card-new">
-                    <h3>{notice.title}</h3>
+                    <h3 className="purple-text">{notice.title}</h3>
                     <p>{notice.content}</p>
                     <p><strong>By:</strong> <span className="purple-text">{notice.authorFirstName} {notice.authorLastName}</span></p>
                     <p><strong>Tags:</strong> {notice.tags}</p>
                     <hr />
-                    <button className="btn red darken-3" onClick={(e) => { dispatchDeleteNotice(e, props.id) }}>
+                    <button className="btn red darken-3 z-depth-0" onClick={(e) => { dispatchDeleteNotice(e, props.id) }}>
                         Delete notice
                     </button>
-                    <Link to={`/edit/${props.match.params.id}`}>
-                        <button className="ml-1 btn green">Edit Notice</button>
-                    </Link>
                 </div>
                 <CreateComments id={props.match.params.id} />
                 <CommentsList id={props.match.params.id} />

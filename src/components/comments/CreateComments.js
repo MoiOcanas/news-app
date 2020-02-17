@@ -34,7 +34,7 @@ class CreateComments extends Component {
                             </div>
                         </div>
                         <div className="input-field">
-                            <button type="submit" className="btn purple darken-1">Comment</button>
+                            <button type="submit" className="btn purple darken-1 z-depth-0">Comment</button>
                         </div>
                     </div>
                 </form>
