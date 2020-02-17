@@ -31,3 +31,24 @@ export const deleteNotice = (noticeId) => {
         })
     }
 };
+
+export const addComment = ({comment}, id) => {
+    console.log("dispatch", comment, id)
+    return(dispatch, getState, {getFirestore}) => {
+      const firestore = getFirestore();
+      const profile = getState().firebase.profile;
+      const authorId = getState().firebase.auth.uid;
+      firestore.collection('notices').doc(id).collection('comments').add({
+        comment: comment,
+        authorFirstName: profile.firstName,
+        authorLastName: profile.lastName,
+        authorId: authorId,
+        createdAt: new Date()
+        }).then(() => {
+          console.log('comment added')
+          dispatch({ type: 'COMMENT_SUCCESS', comment}) 
+        }).catch(err => {
+          dispatch({ type: 'COMMENT_DELETE', err })
+        })
+    }
+  }

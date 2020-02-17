@@ -23,7 +23,6 @@ class Navbar extends Component {
     render() {
         const { auth, profile } = this.props;
         const links = auth.uid ? <AuthLinks profile={profile} /> : <NoAuthLinks />;
-        console.log(profile);
         return (
             <div className="navbar-fixed">
                 <nav className="grey darken-4">

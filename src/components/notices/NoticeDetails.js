@@ -6,23 +6,30 @@ import { deleteNotice } from '../../store/actions/noticesActions';
 import { Link } from 'react-router-dom';
 
 
+//Components
+import CreateComments from '../comments/CreateComments';
+import CommentsList from '../comments/CommentsList';
+
 const NoticeDetails = (props) => {
     const { notice, dispatchDeleteNotice } = props;
-    console.log(props);
     if (notice) {
         return (
-            <div className="card-new">
-                <h3>{notice.title}</h3>
-                <p>{notice.content}</p>
-                <p><strong>By:</strong> <span className="purple-text">{notice.authorFirstName} {notice.authorLastName}</span></p>
-                <p><strong>Tags:</strong> {notice.tags}</p>
-                <hr />
-                <button className="btn red darken-3" onClick={(e) => { dispatchDeleteNotice(e, props.id) }}>
-                    Delete notice
+            <div>
+                <div className="card-new">
+                    <h3>{notice.title}</h3>
+                    <p>{notice.content}</p>
+                    <p><strong>By:</strong> <span className="purple-text">{notice.authorFirstName} {notice.authorLastName}</span></p>
+                    <p><strong>Tags:</strong> {notice.tags}</p>
+                    <hr />
+                    <button className="btn red darken-3" onClick={(e) => { dispatchDeleteNotice(e, props.id) }}>
+                        Delete notice
                     </button>
-                <Link to={`/edit/${props.match.params.id}`}>
-                    <button className="ml-1 btn green">Edit Notice</button>
-                </Link>
+                    <Link to={`/edit/${props.match.params.id}`}>
+                        <button className="ml-1 btn green">Edit Notice</button>
+                    </Link>
+                </div>
+                <CreateComments id={props.match.params.id} />
+                <CommentsList id={props.match.params.id} />
             </div>
         );
     } else {

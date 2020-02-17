@@ -1,5 +1,6 @@
 const initState = {
-    notices: {}
+    notices: {},
+    comments: []
 }
 
 const noticesReducer = (state = initState, action) => {
@@ -19,6 +20,12 @@ const noticesReducer = (state = initState, action) => {
         case 'DELETE_NOTICE_ERROR':
             console.log('Delete notice error: ');
             return state;
+        /* falls through */
+        case 'COMMENT_SUCCESS':
+            console.log('add comment success');
+            return {
+                comments: [...state.comments, action.comment]
+            }
         /* falls through */
         default:
             return state;
