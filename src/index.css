@@ -75,11 +75,42 @@ nav .brand-logo>span {
   font-size:2vw;
 }
 
-.card-new {
+.card-notice {
   background-color: #fff;
-  padding: 20px;
-  margin: 10px 0px;
+  padding: 20px 35px;
+  margin: 0;
   border-radius: 10px;
+}
+
+.card-noti{
+  background-color: #fff;
+  padding: 20px 35px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.card-new {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.card-new-head {
+  background-color: #fff;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 20px 0px;
+}
+
+.card-new-head h4 {
+  margin: 0;
+}
+
+.card-new-content {
+  background-color: #fff;
+  padding: 20px 35px;
+  margin: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 label {
@@ -94,6 +125,11 @@ textarea.materialize-textarea:focus:not([readonly]){
   box-shadow: 0 1px 0 0 #8e24aa !important;
   color: #8e24aa !important;
   box-shadow: none;
+}
+
+#image {
+  opacity: 0;
+  z-index: -1;
 }
 
 @media (min-width: 1281px) {
@@ -154,5 +190,9 @@ textarea.materialize-textarea:focus:not([readonly]){
 @media (min-width: 320px) and (max-width: 480px) {
   nav .brand-logo {
     font-size: 13px !important;
+  }
+
+  .card-new {
+    padding: 20px 15px;
   }
 }

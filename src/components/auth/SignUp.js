@@ -45,46 +45,49 @@ class SignUp extends Component {
         if (auth.uid) return <Redirect to="/home" />
         return (
             <div className="card-new">
-
-                <form className="col s12" onSubmit={this.handleSubmit}>
+                <div className="card-new-head purple darken-1">
                     <div className="text-center">
-                        <h4>SignUp</h4>
+                        <h4 className="white-text">SignUp</h4>
                     </div>
-                    <div className="row">
-                        <div className="input-field col s6">
-                            <input id="firstName" type="text" onChange={this.handleChange} />
-                            <label htmlFor="firstName">First Name</label>
+                </div>
+                <div className="card-new-content">
+                    <form className="col s12" onSubmit={this.handleSubmit}>
+                        <div className="row">
+                            <div className="input-field col s6">
+                                <input id="firstName" type="text" onChange={this.handleChange} />
+                                <label htmlFor="firstName">First Name</label>
+                            </div>
+                            <div className="input-field col s6">
+                                <input id="lastName" type="text" onChange={this.handleChange} />
+                                <label htmlFor="lastName">Last Name</label>
+                            </div>
                         </div>
-                        <div className="input-field col s6">
-                            <input id="lastName" type="text" onChange={this.handleChange} />
-                            <label htmlFor="lastName">Last Name</label>
+                        <div className="row">
+                            <div className="input-field col s12">
+                                <input id="password" type="password" onChange={this.handleChange} />
+                                <label htmlFor="password">Image</label>
+                            </div>
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="input-field col s12">
-                            <input id="password" type="password" onChange={this.handleChange} />
-                            <label htmlFor="password">Password</label>
+                        <div className="row">
+                            <div className="input-field col s12">
+                                <input type="file" id="image" onChange={this.handleChangeImage} />
+                                <label className="btn purple darken-1 z-depth-0 white-text" style={{ cursor: 'pointer' }} htmlFor="image">Select you profile picture</label>
+                            </div>
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="input-field">
-                            <label htmlFor="image">Profile Photo</label>
-                            <input type="file" id="image" onChange={this.handleChangeImage} />
+                        <div className="row">
+                            <div className="input-field col s12">
+                                <input id="email" type="email" onChange={this.handleChange} />
+                                <label htmlFor="email">Email</label>
+                            </div>
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="input-field col s12">
-                            <input id="email" type="email" onChange={this.handleChange} />
-                            <label htmlFor="email">Email</label>
-                        </div>
-                    </div>
-                    <button className="btn purple darken-1 z-depth-0" type="submit" name="action">Submit
+                        <button className="btn purple darken-1 z-depth-0" type="submit" name="action">Submit
                         <i className="material-icons right">send</i>
-                    </button>
-                    <div className="red-text center">
-                        {authError ? <p>{authError}</p> : null}
-                    </div>
-                </form>
+                        </button>
+                        <div className="red-text center">
+                            {authError ? <p>{authError}</p> : null}
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     }

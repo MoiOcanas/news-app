@@ -5,12 +5,12 @@ const AdtionalInformation = (props) => {
     const { notifications } = props;
     return (
         <div>
-            <h4>Notificacions</h4>
+            <h4>Notifications</h4>
             <div>
                 {
                     notifications && notifications.map(item => {
                         return (
-                            <div className="card-new" key={item.id}>
+                            <div className="card-noti" key={item.id}>
                                 <h5 className="purple-text">{item.user}</h5>
                                 <p>{item.content}</p>
                                 <hr />

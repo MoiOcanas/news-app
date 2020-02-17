@@ -14,7 +14,7 @@ const NoticeDetails = (props) => {
     if (notice) {
         return (
             <div>
-                <div className="card-new">
+                <div className="card-new-content">
                     <h3 className="purple-text">{notice.title}</h3>
                     <p>{notice.content}</p>
                     <p><strong>By:</strong> <span className="purple-text">{notice.authorFirstName} {notice.authorLastName}</span></p>

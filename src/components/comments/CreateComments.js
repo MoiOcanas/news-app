@@ -25,7 +25,7 @@ class CreateComments extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <div className="card-new">
+                    <div className="card-noti">
                         <div className="row">
                             <h5 className="grey-text text-darken-3">Comment:</h5>
                             <div className="input-field col s12">
