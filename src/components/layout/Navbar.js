@@ -32,7 +32,7 @@ class Navbar extends Component {
                                 <i className="large material-icons">language</i>
                                 News Manager
                             </span>
-                            <Link data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></Link>
+                            <Link to="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></Link>
                             <ul className="right hide-on-med-and-down">
                                 { links }
                             </ul>

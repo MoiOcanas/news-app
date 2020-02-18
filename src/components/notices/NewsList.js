@@ -10,7 +10,7 @@ const NewsList = ({ notices }) => {
                 {
                     notices && notices.map(n => {
                         return (
-                            <NoticeSummary notice={n} />
+                            <NoticeSummary notice={n} key={n.id} />
                         );
                     })
                 }
