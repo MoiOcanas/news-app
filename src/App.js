@@ -11,6 +11,7 @@ import CreateNotice from './components/notices/CreateNotice';
 import NoticeDetails from './components/notices/NoticeDetails';
 import HomePage from './components/HomePage';
 import EditNotice from './components/notices/EditNotice';
+import Profile from './components/profile/Profile';
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
               <Route path="/signin" component={SignIn} />
               <Route path="/signup" component={SignUp} />
               <Route path="/create" component={CreateNotice} />
+              <Route path="/profile" component={Profile} />
             </Switch>
           </div>
 

@@ -6,11 +6,11 @@ const NoticeItem = ({ notice }) => {
         <div>
             <div className="card-new">
                 <div className="card-content">
-                    <h4 className="purple-text">{notice.title}</h4>
+                    <h4>{notice.title}</h4>
 
                     <p>{notice.content}</p>
                     <br />
-                    <p><strong>Tags:</strong> <span className="purple-text">{notice.tags}</span></p>
+                    <p><b>Tags:</b> <span>{notice.tags}</span></p>
                 </div>
                 <hr />
                 <Link to={`/notice/${notice.id}`}>

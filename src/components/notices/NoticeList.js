@@ -6,7 +6,6 @@ import NoticeSummary from './NoticeSummary';
 const NoticeList = ({ notices }) => {
     return (
         <div>
-            <h4>News</h4>
             {
                 notices && notices.map(notice => {
                     return (

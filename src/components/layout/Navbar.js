@@ -25,12 +25,11 @@ class Navbar extends Component {
         const links = auth.uid ? <AuthLinks profile={profile} /> : <NoAuthLinks />;
         return (
             <div className="navbar-fixed">
-                <nav className="grey darken-4">
+                <nav className="white">
                     <div className="container">
                         <div className="nav-wrapper">
                             <span className="brand-logo">
-                                <i className="large material-icons">language</i>
-                                News Manager
+                                <b>News Manager</b>
                             </span>
                             <Link to="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></Link>
                             <ul className="right hide-on-med-and-down">

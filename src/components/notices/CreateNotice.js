@@ -29,37 +29,24 @@ class CreateNotice extends Component {
         const { auth } = this.props;
         if (!auth.uid) return <Redirect to="/signin" />
         return (
-            <div className="card-new">
-                <div className="card-new-head purple darken-1 white-text">
-                    <div className="text-center">
-                        <h4>Create a notice</h4>
-                    </div>
-                </div>
-                <div className="card-new-content">
-                    <form onSubmit={this.handleSubmit} className="col s12">
-                        <div className="row">
-                            <div className="input-field col s12">
-                                <input id="title" type="text" onChange={this.handleChange} />
-                                <label htmlFor="title">Title</label>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="input-field col s12">
-                                <input id="content" type="text" onChange={this.handleChange} />
-                                <label htmlFor="content">Content</label>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="input-field col s12">
-                                <input id="tags" type="text" onChange={this.handleChange} />
-                                <label htmlFor="tags">Tags</label>
-                            </div>
-                        </div>
-                        <button className="btn purple darken-1 z-depth-0" type="submit" name="action">Submit
-                        <i className="material-icons right">send</i>
-                        </button>
-                    </form>
-                </div>
+            <div className="card-secondary">
+                <h4>Create a notice</h4>
+                <form onSubmit={this.handleSubmit} className="col s12">
+                    <label htmlFor="title">Title</label>
+                    <input id="title" type="text" className="input" onChange={this.handleChange} />
+
+                    <label htmlFor="tags">Tags</label>
+                    <input id="tags" type="text" className="input" onChange={this.handleChange} />
+
+                    <label htmlFor="content">Content</label>
+                    <textarea id="content" rows="10" cols="20" className="create-notice-input text-area" onChange={this.handleChange}></textarea>
+
+                    
+                    <br />
+
+                    <button className="submit-button" type="submit" name="action">Submit</button>
+                </form>
+
             </div>
         );
     }

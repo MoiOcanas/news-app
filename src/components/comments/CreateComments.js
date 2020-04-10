@@ -17,7 +17,7 @@ class CreateComments extends Component {
         const id = this.props.id
         this.props.addCommentDispatch(this.state, id);
         this.setState({
-           comment: '' 
+            comment: ''
         });
     }
 
@@ -25,16 +25,13 @@ class CreateComments extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <div className="card-noti">
-                        <div className="row">
-                            <h5 className="grey-text text-darken-3">Comment:</h5>
-                            <div className="input-field col s12">
-                                <textarea name="comment" id="comment" className="materialize-textarea" cols="30" rows="10"
-                                    onChange={this.handleChange} />
-                            </div>
-                        </div>
+                    <div className="card-secondary">
+                        <h5>Comment:</h5>
+                        <textarea name="comment" id="comment" className="comment-input text-area" cols="30" rows="10"
+                            onChange={this.handleChange} />
+
                         <div className="input-field">
-                            <button type="submit" className="btn purple darken-1 z-depth-0">Comment</button>
+                            <button type="submit" className="create-button">Comment</button>
                         </div>
                     </div>
                 </form>

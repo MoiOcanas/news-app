@@ -10,13 +10,13 @@ const CommentsList = ({ comments }) => {
         <div>
             {!comments ? "Loading comments..." : comments.map(comm => {
                 return (
-                    <div className="card-noti" key={comm.id}>
+                    <div className="card-secondary" key={comm.id}>
                         <div>
                             <p>{comm.comment}</p>
                         </div>
                         <hr />
-                            <p><strong>Posted by:</strong> <span className="purple-text">{comm.authorFirstName} {comm.authorLastName}</span></p>
-                        <p>{comm.createdAt ?
+                            <p><b>Posted by:</b> <span>{comm.authorFirstName} {comm.authorLastName}</span></p>
+                        <p><b>On:</b> {comm.createdAt ?
                             moment(comm.createdAt.toDate().toString()).calendar() :
                             null}</p>
                     </div>

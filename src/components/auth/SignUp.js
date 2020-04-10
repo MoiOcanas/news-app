@@ -44,50 +44,30 @@ class SignUp extends Component {
         const { auth, authError } = this.props;
         if (auth.uid) return <Redirect to="/home" />
         return (
-            <div className="card-new">
-                <div className="card-new-head purple darken-1">
-                    <div className="text-center">
-                        <h4 className="white-text">SignUp</h4>
+            <div className="card-secondary">
+
+                <h4>SignUp</h4>
+
+                <form className="col s12" onSubmit={this.handleSubmit}>
+
+                    <label htmlFor="firstName">First Name</label>
+                    <input id="firstName" className="input" type="text" onChange={this.handleChange} />
+
+                    <label htmlFor="lastName">Last Name</label>
+                    <input id="lastName" className="input" type="text" onChange={this.handleChange} />
+                    
+                    <label htmlFor="email">Email</label>
+                    <input id="email" className="input" type="email" onChange={this.handleChange} />
+                    
+                    <label htmlFor="password">Password</label>
+                    <input id="password" className="input" type="password" onChange={this.handleChange} />
+
+                    <button className="signup" type="submit" name="action">Submit</button>
+                    <div className="red-text center">
+                        {authError ? <p>{authError}</p> : null}
                     </div>
-                </div>
-                <div className="card-new-content">
-                    <form className="col s12" onSubmit={this.handleSubmit}>
-                        <div className="row">
-                            <div className="input-field col s6">
-                                <input id="firstName" type="text" onChange={this.handleChange} />
-                                <label htmlFor="firstName">First Name</label>
-                            </div>
-                            <div className="input-field col s6">
-                                <input id="lastName" type="text" onChange={this.handleChange} />
-                                <label htmlFor="lastName">Last Name</label>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="input-field col s12">
-                                <input id="password" type="password" onChange={this.handleChange} />
-                                <label htmlFor="password">Image</label>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="input-field col s12">
-                                <input type="file" id="image" onChange={this.handleChangeImage} />
-                                <label className="btn purple darken-1 z-depth-0 white-text" style={{ cursor: 'pointer' }} htmlFor="image">Select you profile picture</label>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="input-field col s12">
-                                <input id="email" type="email" onChange={this.handleChange} />
-                                <label htmlFor="email">Email</label>
-                            </div>
-                        </div>
-                        <button className="btn purple darken-1 z-depth-0" type="submit" name="action">Submit
-                        <i className="material-icons right">send</i>
-                        </button>
-                        <div className="red-text center">
-                            {authError ? <p>{authError}</p> : null}
-                        </div>
-                    </form>
-                </div>
+                </form>
+
             </div>
         );
     }

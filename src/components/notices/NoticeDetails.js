@@ -14,13 +14,12 @@ const NoticeDetails = (props) => {
     if (notice) {
         return (
             <div>
-                <div className="card-noti">
-                    <h3 className="purple-text">{notice.title}</h3>
+                <div className="card-secondary">
+                    <h4>{notice.title}</h4>
                     <p>{notice.content}</p>
-                    <p><strong>By:</strong> <span className="purple-text">{notice.authorFirstName} {notice.authorLastName}</span></p>
-                    <p><strong>Tags:</strong> {notice.tags}</p>
-                    <hr />
-                    <button className="btn red darken-3 z-depth-0" onClick={(e) => { dispatchDeleteNotice(e, props.id) }}>
+                    <p><b>By:</b> <span>{notice.authorFirstName} {notice.authorLastName}</span></p>
+                    <p><b>Tags:</b> {notice.tags}</p>
+                    <button className="delete-button" onClick={(e) => { dispatchDeleteNotice(e, props.id) }}>
                         Delete notice
                     </button>
                 </div>

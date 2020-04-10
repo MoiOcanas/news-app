@@ -12,7 +12,7 @@ const AuthLinks = (props) => {
             <li><Link to="#" onClick={props.signOut}>Log Out</Link></li>
             <li>
                 <NavLink to="/profile" className="btn btn-floating">
-                    <img alt="profile" className="circle responsive-img grey darken-4 " src={props.profile.photoURL} />
+                    <img alt="profile" className="circle responsive-img" src={props.profile.photoURL} />
                 </NavLink>
             </li>
         </div>
