@@ -13,7 +13,10 @@ class Navbar extends Component {
 
     componentDidMount = () => {
         let sidenav = document.querySelector('#mobile-demo');
-        M.Sidenav.init(sidenav, {});
+        M.Sidenav.init(sidenav, {
+            edge: "left",
+            inDuration: 250
+        });
     }
 
     render() {
