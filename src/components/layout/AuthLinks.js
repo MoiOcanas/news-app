@@ -10,11 +10,11 @@ const AuthLinks = (props) => {
             <li><NavLink to="/about">About</NavLink></li>
             <li><NavLink to="/create">Create notice</NavLink></li>
             <li><Link to="#" onClick={props.signOut}>Log Out</Link></li>
-            <li>
-                <NavLink to="/profile" className="btn btn-floating">
+            {/* <li>
+                <NavLink to="/profile">
                     <img alt="profile" className="circle responsive-img" src={props.profile.photoURL} />
                 </NavLink>
-            </li>
+            </li> */}
         </div>
     );
 }

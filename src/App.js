@@ -19,7 +19,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Navbar />
-          <div className="container mt-4">
+          <div className="container main-container">
             <Switch>
               <Route path="/home" component={Home} />
               <Route exact path="/" component={HomePage} />

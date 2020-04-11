@@ -10,37 +10,35 @@ import NoAuthLinks from './NoAuthLinks';
 
 
 class Navbar extends Component {
-    state = {}
 
     componentDidMount = () => {
-        var elem = document.querySelector(".sidenav");
-        M.Sidenav.init(elem, {
-            edge: "left",
-            inDuration: 250
-        });
+        let sidenav = document.querySelector('#mobile-demo');
+        M.Sidenav.init(sidenav, {});
     }
 
     render() {
         const { auth, profile } = this.props;
         const links = auth.uid ? <AuthLinks profile={profile} /> : <NoAuthLinks />;
         return (
-            <div className="navbar-fixed">
-                <nav className="white">
-                    <div className="container">
-                        <div className="nav-wrapper">
-                            <span className="brand-logo">
-                                <b>News Manager</b>
-                            </span>
-                            <Link to="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></Link>
-                            <ul className="right hide-on-med-and-down">
-                                { links }
-                            </ul>
+            <div>
+                <div className="navbar-fixed">
+                    <nav className="white">
+                        <div className="container">
+                            <div className="nav-wrapper">
+                                <span className="brand-logo">
+                                    <b>News Manager</b>
+                                </span>
+                                <Link to="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></Link>
+                                <ul className="right hide-on-med-and-down">
+                                    {links}
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </nav>
+                    </nav>
+                </div>
 
                 <ul className="sidenav" id="mobile-demo">
-                    { links }
+                    {links}
                 </ul>
             </div>
         );
